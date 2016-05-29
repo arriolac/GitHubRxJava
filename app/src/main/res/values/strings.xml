@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GitHubRxJava</string>
+    <string name="search">Search</string>
+    <string name="username">Username</string>
 </resources>
