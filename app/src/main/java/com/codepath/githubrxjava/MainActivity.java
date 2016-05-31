@@ -11,6 +11,8 @@ import android.widget.ListView;
 import java.util.List;
 import rx.Observer;
 import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,19 +47,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getStarredRepos(String username) {
-        subscription = GitHubClient.getInstance().getStarredRepos(username).subscribe(new Observer<List<GitHubRepo>>() {
-            @Override public void onCompleted() {
-                Log.d(TAG, "In onCompleted()");
-            }
+        subscription = GitHubClient.getInstance()
+                                   .getStarredRepos(username)
+                                   .subscribeOn(Schedulers.io())
+                                   .observeOn(AndroidSchedulers.mainThread())
+                                   .subscribe(new Observer<List<GitHubRepo>>() {
+                                       @Override public void onCompleted() {
+                                           Log.d(TAG, "In onCompleted()");
+                                       }
 
-            @Override public void onError(Throwable e) {
-                Log.d(TAG, "In onError()");
-            }
+                                       @Override public void onError(Throwable e) {
+                                           e.printStackTrace();
+                                           Log.d(TAG, "In onError()");
+                                       }
 
-            @Override public void onNext(List<GitHubRepo> gitHubRepos) {
-                Log.d(TAG, "In onNext()");
-                adapter.setGitHubRepos(gitHubRepos);
-            }
-        });
+                                       @Override public void onNext(List<GitHubRepo> gitHubRepos) {
+                                           Log.d(TAG, "In onNext()");
+                                           adapter.setGitHubRepos(gitHubRepos);
+                                       }
+                                   });
     }
 }
