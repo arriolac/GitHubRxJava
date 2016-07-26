@@ -9,6 +9,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by chris on 6/1/16.
+ */
 public class GitHubRepoAdapter extends BaseAdapter {
 
     private List<GitHubRepo> gitHubRepos = new ArrayList<>();
@@ -51,6 +54,11 @@ public class GitHubRepoAdapter extends BaseAdapter {
         final GitHubRepoViewHolder viewHolder = new GitHubRepoViewHolder(view);
         view.setTag(viewHolder);
         return view;
+    }
+
+    public void add(GitHubRepo gitHubRepo) {
+        gitHubRepos.add(gitHubRepo);
+        notifyDataSetChanged();
     }
 
     private static class GitHubRepoViewHolder {

@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Observable;
 
 /**
- * Created by chris on 5/22/16.
+ * Created by chris on 6/1/16.
  */
 public class GitHubClient {
 

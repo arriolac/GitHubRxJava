@@ -1,7 +1,9 @@
 package com.codepath.githubrxjava;
 
+/**
+ * Created by chris on 6/1/16.
+ */
 public class GitHubRepo {
-
     public final int id;
     public final String name;
     public final String htmlUrl;
