@@ -1,4 +1,4 @@
-package com.codepath.githubrxjava;
+package com.chrisarriola.githubrxjava;
 
 /**
  * Created by chris on 6/1/16.

@@ -1,4 +1,4 @@
-package com.codepath.githubrxjava;
+package com.chrisarriola.githubrxjava;
 
 import java.util.List;
 import retrofit2.http.GET;

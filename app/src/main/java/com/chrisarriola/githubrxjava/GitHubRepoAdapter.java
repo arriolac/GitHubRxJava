@@ -1,4 +1,4 @@
-package com.codepath.githubrxjava;
+package com.chrisarriola.githubrxjava;
 
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;

@@ -1,4 +1,4 @@
-package com.codepath.githubrxjava;
+package com.chrisarriola.githubrxjava;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
